@@ -25,24 +25,24 @@ sub_clean () {
 }
 
 sub_macos () {
-  echo "Applying mac defaults" && sh "${DOTFILES_DIR}/macos.sh"
+  echo "Applying mac defaults" && sh "${DOTFILES_DIR}/scripts/macos.sh"
   echo "Done. Some changes may require a logout/restart to take effect."
 }
 
 sub_link () {
-  sh "${DOTFILES_DIR}/symlink-dotfiles.sh"
+  sh "${DOTFILES_DIR}/scripts/symlink-dotfiles.sh"
 }
 
 sub_brew () {
-  sh "${DOTFILES_DIR}/brew.sh"
+  sh "${DOTFILES_DIR}/scripts/brew.sh"
 }
 
 sub_composer () {
-  sh "${DOTFILES_DIR}/composer.sh"
+  sh "${DOTFILES_DIR}/scripts/composer.sh"
 }
 
 sub_update () {
-  sh "${DOTFILES_DIR}/update.sh"
+  sh "${DOTFILES_DIR}/scripts/update.sh"
 }
 
 case $COMMAND_NAME in
