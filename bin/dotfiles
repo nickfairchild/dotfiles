@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+
+BIN_NAME=$(basename "$0")
+COMMAND_NAME=$1
+
+sub_help () {
+  echo "Usage: $BIN_NAME <command>"
+  echo
+  echo "Commands:"
+  echo "   clean            Clean up caches (brew, npm, composer)"
+  # echo "   edit             Open dotfiles in IDE ($DOTFILES_IDE) and Git GUI ($DOTFILES_GIT_GUI)"
+  echo "   help             This help message"
+  echo "   macos            Apply macOS system defaults"
+  echo "   link             Symlink dotfiles"
+  echo "   brew             Setup homebrew"
+  echo "   composer         Setup composer"
+  echo "   update           Update packages and pkg managers (OS, brew, npm, composer)"
+}
+
+sub_clean () {
+  brew cleanup
+  brew cask cleanup
+  npm cache verify
+  composer global clear-cache
+}
+
+sub_macos () {
+  echo "Applying mac defaults" && sh "${DOTFILES_DIR}/macos.sh"
+  echo "Done. Some changes may require a logout/restart to take effect."
+}
+
+sub_link () {
+  sh "${DOTFILES_DIR}/symlink-dotfiles.sh"
+}
+
+sub_brew () {
+  sh "${DOTFILES_DIR}/brew.sh"
+}
+
+sub_composer () {
+  sh "${DOTFILES_DIR}/composer.sh"
+}
+
+sub_update () {
+  sh "${DOTFILES_DIR}/update.sh"
+}
+
+case $COMMAND_NAME in
+  "" | "-h" | "--help")
+    sub_help
+    ;;
+  *)
+    shift
+    sub_${COMMAND_NAME} $@
+    if [ $? = 127 ]; then
+      echo "'$COMMAND_NAME' is not a known command or has errors." >&2
+      sub_help
+      exit 1
+    fi
+    ;;
+esac
