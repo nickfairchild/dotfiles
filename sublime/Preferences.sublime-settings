@@ -1,0 +1,24 @@
+{
+	"auto_complete_commit_on_tab": true,
+	"auto_complete_delay": 0,
+	"auto_complete_with_fields": true,
+	"caret_style": "phase",
+	"close_windows_when_empty": true,
+	"color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
+	"ensure_newline_at_eof_on_save": true,
+	"font_face": "Fira Code",
+	"font_size": 13,
+	"ignored_packages":
+	[
+		"CSS",
+		"Vintage"
+	],
+	"line_padding_bottom": 3,
+	"line_padding_top": 3,
+	"save_on_focus_lost": true,
+	"scroll_past_end": true,
+	"tab_size": 4,
+	"theme": "Adaptive.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true
+}
