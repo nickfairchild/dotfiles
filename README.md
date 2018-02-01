@@ -12,7 +12,7 @@ On a fresh installation of macOS:
 ### Clone with Git
 
     git clone https://github.com/nickfairchild/dotfiles.git ~/.dotfiles
-    source ~/.dotfiles/install.sh
+    source ~/.dotfiles/setup.sh
 
 ## The `dotfiles` command
 
