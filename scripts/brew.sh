@@ -4,7 +4,6 @@
 
 # Make sure we’re using the latest Homebrew.
 brew update
-brew tap homebrew/dupes
 
 # Upgrade any already-installed formulae.
 brew upgrade
@@ -20,12 +19,8 @@ brew install findutils
 # Install GNU `sed`, overwriting the built-in `sed`.
 brew install gnu-sed --with-default-names
 
-# Install zsh and oh-my-zsh
-brew install zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-# Install `wget` with IRI support.
-brew install wget --with-iri
+# Install `wget`.
+brew install wget
 
 # Install GnuPG to enable PGP-signing commits.
 brew install gnupg
@@ -88,3 +83,7 @@ brew cask install font-source-serif-pro
 # Remove outdated versions from the cellar.
 brew cleanup
 brew cask cleanup
+
+# Install zsh and oh-my-zsh
+brew install zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
