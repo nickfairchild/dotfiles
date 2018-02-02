@@ -52,7 +52,6 @@ brew install node
 brew install php-cs-fixer
 brew install ssh-copy-id
 brew install tree
-brew install wget
 brew install yarn
 
 # Install casks
